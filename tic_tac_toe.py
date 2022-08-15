@@ -1,16 +1,5 @@
-#!/usr/bin/env python
-# coding: utf-8
-
 # # Game Class
-
-# In[1]:
-
-
 import random
-
-
-# In[2]:
-
 
 class TicTacToe:
     def __init__(self, board = ['_' for i in range(9)]):
@@ -25,6 +14,7 @@ class TicTacToe:
         for i in range(3):
             print('---    '+' '.join(self.board[i*3:(i+1)*3]) + '     ---')
         print('--------------------')   
+        
     @staticmethod
     def print_board_nums():
         for i in range(3):
@@ -84,18 +74,11 @@ class TicTacToe:
 
 # # Player Class
 
-# In[3]:
-
-
 class Player:
     # letter O or X
     def __init__(self, letter):
         self.letter = letter
         
-
-
-# In[4]:
-
 
 class HumanPlayer(Player):
     def __init__(self, letter):
@@ -118,10 +101,6 @@ class HumanPlayer(Player):
                 print('invalid move, try again')
                 
         return inp   
-
-
-# In[12]:
-
 
 class AI:
     def __init__(self, player, letter):
@@ -182,10 +161,6 @@ class AI:
         return random.choice(list(moves.keys()))
             
 
-
-# In[6]:
-
-
 class BasicComputer(Player):
     def __init__(self, letter):
         super().__init__(letter)
@@ -193,9 +168,6 @@ class BasicComputer(Player):
         
     def get_move(self, game):
         return random.choice(game.available_moves)
-
-
-# In[7]:
 
 
 def play(game, p1, p2, show=True):
@@ -229,9 +201,6 @@ def play(game, p1, p2, show=True):
     game.reset_game()
 
 
-# In[8]:
-
-
 def get_players(n, player=None):
     if n == 0:
         p1 = HumanPlayer('X')
@@ -243,9 +212,6 @@ def get_players(n, player=None):
         p1 = HumanPlayer('X')
         p2 = HumanPlayer('O')
     return p1, p2
-
-
-# In[9]:
 
 
 def dialog_to_get_type():
@@ -262,18 +228,12 @@ def dialog_to_get_type():
     return tp
 
 
-# In[10]:
-
-
 def end_or_continue():
     print('Wanna continue?')
     while True:
         diag = input('Y/N: ')
         if diag in ['Y', 'N']:
             return diag == 'Y'
-
-
-# In[11]:
 
 
 game = TicTacToe()
@@ -285,10 +245,6 @@ while True:
     if not end_or_continue():
         print('good game')
         break
-
-
-# In[ ]:
-
 
 
 
