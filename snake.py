@@ -1,11 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# # Snake
-
-# In[1]:
-
-
 # contains n blocks
 # on each iteration remove last block add 1 front
 class snake:
@@ -43,11 +35,7 @@ class snake:
     
     def get_head(self):
         return self.body[0]
-
-
-# In[2]:
-
-
+    
 class Game:
     def __init__(self, size):
         self.size = size
@@ -66,10 +54,6 @@ class Game:
 
 
 # # Helper functions
-
-# In[3]:
-
-
 def update_movement(e, size):
     if e == pygame.K_LEFT:
         if dx <= 0:
@@ -85,19 +69,12 @@ def update_movement(e, size):
             return (0, size)
     return (dx, dy)
 
-
-# In[4]:
-
-
 def message(msg,color):
     mesg = font_style.render(msg, True, color)
     dis.blit(mesg, [width/2, height/2])
 
 
 # # init canvas
-
-# In[5]:
-
 
 import pygame
 import time
@@ -129,17 +106,11 @@ speed = 10
 all_locs = set([(w, h) for w in range(0, width-obs+1, obs) for h in range(0, height-obs+1, obs)])
 
 
-# In[6]:
-
-
 snk = snake(obs, width, height)
 game = Game(snk.size)
 
 
 # # Game
-
-# In[7]:
-
 
 game_over = False
 cnt = 0
@@ -172,16 +143,6 @@ time.sleep(2)
 
 pygame.quit()
 quit()
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
 
 
 
