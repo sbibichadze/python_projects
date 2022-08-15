@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[19]:
-
-
 import random
 import time 
 
@@ -107,10 +101,6 @@ class Minesweeper():
         return f"number of bombs left : {self.bomb_count}\nnumber of safe spots : {self.rows*self.columns - self.correct_count - self.bomb_count}"
                     
 
-
-# In[20]:
-
-
 def play():
     # get dimensions from player
     rows = 8
@@ -155,14 +145,7 @@ def play():
                 print('you lose')
             break
 
-
-# In[21]:
-
-
 play()
-
-
-# In[ ]:
 
 
 
